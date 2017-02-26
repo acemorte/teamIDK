@@ -73,11 +73,13 @@ Quizlexa.prototype.intentHandlers = {
             var previous = [];
             while(true){                //randomly picks an index not previously chosen
                 whichCard = getRandomInt(0, cardset.length);
+                var exists = new Boolean(False);
                 for(int i = 0; i < previous.length; i++){
                     if(whichCard == previous) {
-                        previous.push(whichCard); 
-                        break;
+                        exists = new Boolean(True);
                     }
+                } if(!exists) {
+                    break;
                 }
             }
 
