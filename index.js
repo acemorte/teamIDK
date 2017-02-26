@@ -70,8 +70,16 @@ Quizlexa.prototype.intentHandlers = {
             console.log("CALLBACK FUNCTION CALLED")
             console.log(cardset.length)
             var title, term, choiceA, choiceB;
-
-            whichCard = getRandomInt(0, cardset.length);
+            var previous = [];
+            while(true){                //randomly picks an index not previously chosen
+                whichCard = getRandomInt(0, cardset.length);
+                for(int i = 0; i < previous.length; i++){
+                    if(whichCard == previous) {
+                        previous.push(whichCard); 
+                        break;
+                    }
+                }
+            }
 
             whichAnswerCorrect = getRandomInt(0, 100);
 
