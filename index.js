@@ -75,10 +75,12 @@ Quizlexa.prototype.intentHandlers = {
                 whichCard = getRandomInt(0, cardset.length);
                 var exists = new Boolean(False);
                 for(int i = 0; i < previous.length; i++){
-                    if(whichCard == previous) {
+                    if(whichCard == previous[i]) {
                         exists = new Boolean(True);
+                        break;
                     }
                 } if(!exists) {
+                    previous.push(whichCard);
                     break;
                 }
             }
