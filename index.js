@@ -23,6 +23,9 @@ var counter = 0;
 
 var whichCard, whichAnswerCorrect;
 
+var previous = [];
+var done = new Boolean(false);
+
 var APP_ID = undefined; //replace with 'amzn1.echo-sdk-ams.app.[your-unique-value-here]';
 
 var Quizlexa = function () {
@@ -70,7 +73,9 @@ Quizlexa.prototype.intentHandlers = {
             console.log("CALLBACK FUNCTION CALLED")
             console.log(cardset.length)
             var title, term, choiceA, choiceB;
-            var previous = [];
+            if(done){
+                previous = [];
+            }
             while(true){                //randomly picks an index not previously chosen
                 whichCard = getRandomInt(0, cardset.length);
                 var exists = new Boolean(False);
@@ -166,6 +171,9 @@ Quizlexa.prototype.intentHandlers = {
         var continuePrompt, repromptContinue;
 
 
+        if (previous.length == cardset.length - 1) {
+            done = new Boolean(true);
+        }        
         if (currentChoice == correctAnswer) {
             continuePrompt = {
                 speech: "Correct! Nice Job. Want to continue?",
