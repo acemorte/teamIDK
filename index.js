@@ -85,24 +85,19 @@ Quizlexa.prototype.intentHandlers = {
                 }
             }
 
-            whichAnswerCorrect = getRandomInt(0, 100);
+            whichAnswerCorrect = getRandomInt(0, 1);
 
-            if (whichAnswerCorrect % 2 == 0) {
+            if (whichAnswerCorrect == 0) {
                 choiceA = cardset[whichCard].definition;
-                choiceB = cardset[((whichCard + 1) > (cardset.length - 1)) ? 0 : (whichCard + 1)].definition;
+                choiceB = cardset[getRandomInt(0,whichCard)].definition;
                 correctAnswer = "a";
-            }
-            else if (whichAnswerCorrect % 2 == 1) {
-                choiceA = cardset[((whichCard + 1) > (cardset.length - 1)) ? 0 : (whichCard + 1)].definition; //if i add and it exceeds the array limit, go down to zero.
+            } else if (whichAnswerCorrect == 1) {
+                choiceA = cardset[getRandomInt(0,whichCard)].definition;
                 choiceB = cardset[whichCard].definition;
                 correctAnswer = "b";
-            } else {
-                choiceA = "I AM ERROR.";
-                choiceB = "I AM BAGU."
-                correctAnswer = "a";
             }
 
-            correctAnswer = (whichAnswerCorrect % 2 == 0) ? "a" : "b";
+            correctAnswer = (whichAnswerCorrect == 0) ? "a" : "b";
 
 
             console.log("ANSWER SET");
