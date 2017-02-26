@@ -1,0 +1,28 @@
+{
+  "name": "alexaquizlet",
+  "version": "1.0.0",
+  "description": "alexa and quizlet open source free.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acemorte/teamIDK.git"
+  },
+  "keywords": [
+    "alexa",
+    "flash",
+    "cards",
+    "quizlet"
+  ],
+  "author": "teamidk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acemorte/teamIDK/issues"
+  },
+  "homepage": "https://github.com/acemorte/teamIDK#readme",
+  "dependencies": {
+    "claudia-api-builder": "^2.4.0"
+  }
+}
