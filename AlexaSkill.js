@@ -170,11 +170,10 @@ Response.prototype = (function () {
                 shouldEndSession: true
             }));
         },
-        ask: function (speechOutput, repromptSpeech) {
+        ask: function (speechOutput) {
             this._context.succeed(buildSpeechletResponse({
                 session: this._session,
                 output: speechOutput,
-                reprompt: repromptSpeech,
                 shouldEndSession: false
             }));
         },
