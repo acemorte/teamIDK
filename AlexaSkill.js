@@ -170,18 +170,12 @@ Response.prototype = (function () {
                 shouldEndSession: true
             }));
         },
-        ask: function (speechOutput) {
+        ask: function (speechOutput, repromptSpeech) {
             this._context.succeed(buildSpeechletResponse({
                 session: this._session,
                 output: speechOutput,
+                reprompt: repromptSpeech,
                 shouldEndSession: false
-            }));
-        },
-        quit: function(speechOutput) {
-            this._context.succeed(buildSpeechletResponse({
-                session:this._session,
-                output: speechOutput,
-                shouldEndSession: true
             }));
         },
         askWithCard: function (speechOutput, repromptSpeech, cardTitle, cardContent) {
