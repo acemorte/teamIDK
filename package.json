@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/acemorte/teamIDK#readme",
   "dependencies": {
+    "alexa-sdk": "^1.0.7",
     "claudia-api-builder": "^2.4.0"
   }
 }
