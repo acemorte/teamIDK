@@ -1,14 +1,10 @@
-//express
 var ApiBuilder = require('claudia-api-builder');
 const qs = require('querystring');
 const rp = require('minimal-request-promise');
-const express = require('minimal-request-promise');
 
-var app = new express();
+var api = new ApiBuilder();
 
-module.exports = app;
-
-app.get('/helloj', function () {
+api.get('/hello', function () {
   return 'hello world';
 });
 
@@ -34,11 +30,10 @@ api.get('/oauth', function request() {
 });
 
 
-//module.exports = app;
 
-/*
-module.exports = {
-	key: function (){},
-    key2: function (){}
-};
-*/
+
+
+
+
+
+module.exports = api;

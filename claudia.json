@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "alexaquizlet-executor",
+    "name": "saul_lambda",
+    "region": "us-east-1"
+  },
+  "api": {
+    "id": "z7b0ynrxda",
+    "module": "index"
+  }
+}
